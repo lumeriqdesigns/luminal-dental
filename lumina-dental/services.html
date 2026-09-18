@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { navy: '#0A2540', teal: '#0A9396', mint: '#E8F5E9', ice: '#F0F7FF', slate: '#1E293B', soft: '#F8FAFC' },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'] },
+          boxShadow: { soft: '0 4px 20px -2px rgba(10, 37, 64, 0.08)', card: '0 8px 30px -6px rgba(10, 37, 64, 0.1)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, sans-serif; }
+    .font-display { font-family: 'Plus Jakarta Sans', Inter, sans-serif; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10, 37, 64, 0.7); z-index: 100; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(4px); }
+    .modal-overlay.active { display: flex; }
+    .nav-link { @apply text-slate-600 hover:text-navy hover:bg-ice font-medium transition-all px-4 py-2 rounded-full text-sm; }
+    .nav-link.active { @apply text-white bg-teal font-semibold shadow-soft; }
+    .step { display: none; } .step.active { display: block; }
+    .focus-ring:focus { outline: 2px solid #0A9396; outline-offset: 2px; }
+  </style>
+  <meta name="description" content="Explore services at Lumina Dental: family dentistry, cosmetic, Invisalign, implants, emergency care, and sedation options." />
+  <title>Services | Lumina Dental & Aesthetic Studio</title>
+  <!-- BreadcrumbList + Service ItemList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://luminadental.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://luminadental.com/services.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Dental Services at Lumina Dental & Aesthetic Studio",
+    "description": "Comprehensive dental services focused on comfort, prevention, aesthetics, and emergency care.",
+    "url": "https://luminadental.com/services.html",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Service",
+          "name": "Preventative & Family Dentistry",
+          "description": "Routine cleanings, exams, sealants, and kid-friendly care that builds lifelong healthy habits.",
+          "provider": { "@id": "https://luminadental.com/#practice" },
+          "areaServed": "Cedar Hills, CA",
+          "serviceType": "Dentistry"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Service",
+          "name": "Cosmetic Dentistry",
+          "description": "Teeth whitening, porcelain veneers, and full smile makeovers crafted for natural-looking confidence.",
+          "provider": { "@id": "https://luminadental.com/#practice" },
+          "serviceType": "Cosmetic Dentistry"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "name": "Invisalign® Clear Aligners",
+          "description": "Discreet, comfortable orthodontic alignment with digital planning. Invisalign Preferred Provider.",
+          "provider": { "@id": "https://luminadental.com/#practice" },
+          "serviceType": "Orthodontics"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Service",
+          "name": "Dental Implants & Restorations",
+          "description": "Permanent tooth replacement and restorative solutions that look, feel, and function like natural teeth.",
+          "provider": { "@id": "https://luminadental.com/#practice" },
+          "serviceType": "Restorative Dentistry"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Service",
+          "name": "Emergency Dental Services",
+          "description": "Same-day pain relief, urgent repairs, and after-hours support when you need us most.",
+          "provider": { "@id": "https://luminadental.com/#practice" },
+          "serviceType": "Emergency Dentistry"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Service",
+          "name": "Sedation & Comfort Dentistry",
+          "description": "Anxiety-free options including nitrous oxide and oral sedation so every visit feels calm and controlled.",
+          "provider": { "@id": "https://luminadental.com/#practice" },
+          "serviceType": "Sedation Dentistry"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-soft text-slate antialiased">
+
+  <div class="bg-navy text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4"><span>📍 Cedar Hills, CA</span><a href="tel:+15550189922" class="hover:text-teal-200 font-medium">📞 (555) 018-9922</a></div>
+      <span class="hidden md:inline text-teal-200 font-medium">✓ Accepting New Patients & Most Insurance</span>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16 md:h-[4.25rem]">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <div class="w-10 h-10 bg-gradient-to-br from-teal to-navy rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l-4-4m4 4l4-4"/></svg></div>
+          <div><div class="font-display text-lg font-bold text-navy leading-none">LUMINA</div><div class="text-[10px] font-semibold text-teal tracking-widest uppercase">Dental & Aesthetic</div></div>
+        </a>
+        <nav class="hidden lg:flex items-center gap-1.5 xl:gap-2">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="gallery.html" class="nav-link">Smile Gallery</a>
+          <a href="insurance.html" class="nav-link">Insurance & Payment</a>
+          <a href="reviews.html" class="nav-link">Reviews</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button onclick="openBooking()" class="bg-teal hover:bg-teal/90 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition">Book Appointment</button>
+          <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-600" aria-label="Menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 bg-white">
+      <div class="px-4 py-3 space-y-1">
+        <a href="index.html" class="block px-3 py-2.5 rounded-lg text-slate-600 hover:bg-ice">Home</a>
+        <a href="about.html" class="block px-3 py-2.5 rounded-lg text-slate-600 hover:bg-ice">About Us</a>
+        <a href="services.html" class="block px-3 py-2.5 rounded-lg text-teal font-semibold bg-ice">Services</a>
+        <a href="gallery.html" class="block px-3 py-2.5 rounded-lg text-slate-600 hover:bg-ice">Smile Gallery</a>
+        <a href="insurance.html" class="block px-3 py-2.5 rounded-lg text-slate-600 hover:bg-ice">Insurance & Payment</a>
+        <a href="reviews.html" class="block px-3 py-2.5 rounded-lg text-slate-600 hover:bg-ice">Reviews</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-br from-ice to-white py-14 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-teal font-semibold text-sm tracking-wide uppercase mb-2">What We Offer</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-navy mb-4">Our Services</h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">Comprehensive, comfort-focused care for every stage of your smile journey.</p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 space-y-16">
+        <article id="family" class="scroll-mt-24">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-mint flex items-center justify-center text-2xl shrink-0">🦷</div>
+            <div>
+              <h2 class="font-display text-2xl font-bold text-navy">Preventative & Family Dentistry</h2>
+              <p class="text-teal text-sm font-medium">Routine care that keeps smiles healthy for life</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">Regular exams, professional cleanings, digital X-rays, fluoride treatments, and sealants. We welcome children and adults in a calm, kid-friendly environment designed to build positive dental habits early.</p>
+          <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+            <li>Comprehensive exams & oral cancer screening</li>
+            <li>Gentle cleanings tailored to sensitivity</li>
+            <li>Pediatric-friendly visits with education for parents</li>
+          </ul>
+        </article>
+
+        <article id="cosmetic" class="scroll-mt-24">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-mint flex items-center justify-center text-2xl shrink-0">✨</div>
+            <div>
+              <h2 class="font-display text-2xl font-bold text-navy">Cosmetic Dentistry</h2>
+              <p class="text-teal text-sm font-medium">Natural-looking enhancements that boost confidence</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">From professional whitening to porcelain veneers and full smile design, we focus on results that look and feel natural. Digital smile previews help you visualize outcomes before treatment begins.</p>
+          <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+            <li>In-office and take-home whitening</li>
+            <li>Porcelain veneers & bonding</li>
+            <li>Smile makeovers with staged planning</li>
+          </ul>
+        </article>
+
+        <article id="invisalign" class="scroll-mt-24">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-mint flex items-center justify-center text-2xl shrink-0">😁</div>
+            <div>
+              <h2 class="font-display text-2xl font-bold text-navy">Invisalign® Clear Aligners</h2>
+              <p class="text-teal text-sm font-medium">Preferred Provider — discreet orthodontics</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">Straighten teeth with nearly invisible aligners. We use advanced digital scanning and treatment planning for predictable, comfortable results without metal braces.</p>
+        </article>
+
+        <article id="implants" class="scroll-mt-24">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-mint flex items-center justify-center text-2xl shrink-0">🔩</div>
+            <div>
+              <h2 class="font-display text-2xl font-bold text-navy">Dental Implants & Restorations</h2>
+              <p class="text-teal text-sm font-medium">Permanent solutions that restore function and beauty</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">Single implants, implant-supported bridges, and full-arch solutions. We coordinate with specialists when needed and focus on long-term stability and natural aesthetics.</p>
+        </article>
+
+        <article id="emergency" class="scroll-mt-24">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-mint flex items-center justify-center text-2xl shrink-0">🚨</div>
+            <div>
+              <h2 class="font-display text-2xl font-bold text-navy">Emergency Dental Services</h2>
+              <p class="text-teal text-sm font-medium">Same-day relief when you need it most</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">Toothaches, broken teeth, lost fillings, or trauma — call our emergency line. We prioritize urgent cases and offer same-day appointments whenever possible.</p>
+          <a href="tel:+15550189922" class="inline-flex items-center gap-2 text-teal font-semibold mt-2">Call Emergency Line: (555) 018-9922 →</a>
+        </article>
+
+        <article id="sedation" class="scroll-mt-24">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-mint flex items-center justify-center text-2xl shrink-0">🧘</div>
+            <div>
+              <h2 class="font-display text-2xl font-bold text-navy">Sedation & Comfort Dentistry</h2>
+              <p class="text-teal text-sm font-medium">Anxiety-free options for a calmer visit</p>
+            </div>
+          </div>
+          <p class="text-slate-600 leading-relaxed mb-4">Nitrous oxide (laughing gas) and oral sedation are available for patients who experience dental anxiety. Combined with our calm environment and communication style, most patients find treatment surprisingly comfortable.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="py-16 bg-navy text-white text-center">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="font-display text-3xl font-bold mb-4">Not sure which service you need?</h2>
+        <p class="text-teal-100 mb-6">Book a consultation and we’ll create a personalized plan together.</p>
+        <button onclick="openBooking()" class="bg-teal hover:bg-teal/90 text-white font-bold px-8 py-3.5 rounded-xl">Schedule Consultation</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div><div class="font-display font-bold text-white mb-2">LUMINA Dental Studio</div><p class="text-sm">4820 Wellness Blvd, Suite 200<br>Cedar Hills, CA 90210<br><a href="tel:+15550189922" class="hover:text-teal">(555) 018-9922</a></p></div>
+        <div><h4 class="font-semibold text-white mb-2">Hours</h4><p class="text-sm">Mon–Fri 8AM–6PM · Sat 9AM–2PM<br>Emergency 24/7</p></div>
+        <div><h4 class="font-semibold text-white mb-2">Links</h4><div class="text-sm space-y-1"><a href="about.html" class="block hover:text-teal">About</a><a href="gallery.html" class="block hover:text-teal">Gallery</a><a href="insurance.html" class="block hover:text-teal">Insurance</a></div></div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 text-xs text-slate-500">© 2026 Lumina Dental Studio. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white border-t border-slate-200 shadow-lg px-4 py-3 flex gap-3">
+    <a href="tel:+15550189922" class="flex-1 bg-navy text-white font-bold text-center py-3.5 rounded-xl">Call Office</a>
+    <button onclick="openBooking()" class="flex-1 bg-teal text-white font-bold py-3.5 rounded-xl">Book Appointment</button>
+  </div>
+
+  <div id="bookingModal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeBooking()" class="absolute top-4 right-4 text-slate-400 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100">&times;</button>
+      <h3 class="font-display text-xl font-bold text-navy mb-1">Book Your Appointment</h3>
+      <p class="text-sm text-slate-500 mb-6">We’ll confirm within a few hours.</p>
+      <div id="bookingSteps">
+        <div class="step active" data-step="1">
+          <label class="block text-xs font-semibold text-slate-600 mb-2">Who is this for?</label>
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <button type="button" class="patient-type border-2 border-slate-200 hover:border-teal rounded-xl p-4 text-left"><div class="font-semibold text-navy">New Patient</div></button>
+            <button type="button" class="patient-type border-2 border-slate-200 hover:border-teal rounded-xl p-4 text-left"><div class="font-semibold text-navy">Existing</div></button>
+          </div>
+          <button onclick="nextStep(2)" class="w-full bg-teal text-white font-semibold py-3 rounded-xl">Continue</button>
+        </div>
+        <div class="step" data-step="2">
+          <label class="block text-xs font-semibold text-slate-600 mb-2">Reason</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm mb-6 bg-white">
+            <option>New Patient Special</option><option>Cleaning</option><option>Cosmetic / Invisalign</option><option>Emergency</option><option>Other</option>
+          </select>
+          <div class="flex gap-3"><button onclick="nextStep(1)" class="flex-1 border border-slate-200 py-3 rounded-xl">Back</button><button onclick="nextStep(3)" class="flex-1 bg-teal text-white font-semibold py-3 rounded-xl">Continue</button></div>
+        </div>
+        <div class="step" data-step="3">
+          <form onsubmit="submitBooking(event)" class="space-y-4">
+            <div><label class="block text-xs font-semibold text-slate-600 mb-1">Name</label><input required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm" /></div>
+            <div><label class="block text-xs font-semibold text-slate-600 mb-1">Phone</label><input type="tel" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm" /></div>
+            <div><label class="block text-xs font-semibold text-slate-600 mb-1">Email</label><input type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm" /></div>
+            <div class="flex gap-3"><button type="button" onclick="nextStep(2)" class="flex-1 border border-slate-200 py-3 rounded-xl">Back</button><button type="submit" class="flex-1 bg-teal text-white font-semibold py-3 rounded-xl">Submit</button></div>
+          </form>
+        </div>
+        <div class="step" data-step="4">
+          <div class="text-center py-6">
+            <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center text-3xl mx-auto mb-4">✓</div>
+            <h4 class="font-display font-bold text-xl text-navy mb-2">Request Received!</h4>
+            <p class="text-slate-600 text-sm mb-6">We’ll confirm shortly.</p>
+            <button onclick="closeBooking()" class="bg-navy text-white font-semibold px-6 py-3 rounded-xl">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
+    function openBooking() { document.getElementById('bookingModal').classList.add('active'); document.body.style.overflow = 'hidden'; nextStep(1); }
+    function closeBooking() { document.getElementById('bookingModal').classList.remove('active'); document.body.style.overflow = ''; }
+    function nextStep(n) { document.querySelectorAll('.step').forEach(s => s.classList.remove('active')); document.querySelector(`.step[data-step="${n}"]`)?.classList.add('active'); }
+    document.querySelectorAll('.patient-type').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('.patient-type').forEach(b => b.classList.remove('border-teal','bg-ice')); btn.classList.add('border-teal','bg-ice'); }));
+    function submitBooking(e) { e.preventDefault(); nextStep(4); }
+    document.getElementById('bookingModal')?.addEventListener('click', e => { if (e.target.id === 'bookingModal') closeBooking(); });
+  </script>
+</body>
+</html>
